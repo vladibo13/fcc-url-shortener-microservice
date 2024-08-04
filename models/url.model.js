@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const urlSchema = mongoose.Schema(
+const urlShortnerSchema = mongoose.Schema(
   {
     original_url: {
       type: String,
@@ -9,6 +9,7 @@ const urlSchema = mongoose.Schema(
     short_url: {
       type: String,
       required: true,
+      unique: true,
     },
   },
   {
@@ -16,6 +17,6 @@ const urlSchema = mongoose.Schema(
   }
 );
 
-const User = mongoose.model("Url", urlSchema);
+const UrlShortner = mongoose.model("UrlShortner", urlShortnerSchema);
 
-export default User;
+export default UrlShortner;

@@ -1,8 +1,9 @@
 import express from "express";
-import { urlHandler } from "../controllers/url.controller.js";
+import { urlHandler, shortUrlHandler } from "../controllers/url.contoller.js";
 
 const router = express.Router();
 
-router.route("/").get(urlHandler);
+router.route("/shorturl").post(urlHandler);
+router.route("/shorturl/:short_url").get(shortUrlHandler);
 
 export default router;

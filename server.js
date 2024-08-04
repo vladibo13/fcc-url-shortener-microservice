@@ -2,6 +2,11 @@ import express from "express";
 import morgan from "morgan";
 import { errorHandler, notFound } from "./middlewares/error.middleware.js";
 import urlRouter from "./routes/url.router.js";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+
+dotenv.config();
+connectDB();
 
 const app = express();
 const port = process.env.PORT || 5001;
